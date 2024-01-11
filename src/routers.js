@@ -6,18 +6,18 @@ const routes = [
     {
         name:"HomePage",
         component: HomePage,
-        path:'/'
+        path:"/",
     },
     {
         name:"SignUp",
         component: SignUp,
-        path:'/sign-up'
+        path:"/sign-up",
     }
 ]
 
 const router = createRouter({
     history:createWebHashHistory(),
-    routes
+    routes,
 })
 
 export default router
