@@ -29,7 +29,7 @@
                     email:this.email,
                     senha:this.senha,
                     nome:this.name
-                })
+                    })
 
                 console.log(result)
                 if(result.status==201) {

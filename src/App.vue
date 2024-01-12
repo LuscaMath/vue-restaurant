@@ -23,19 +23,19 @@ export default {
 .logo {
   width: 150px;
 }
-.register, .login {
+.register, .login, .add-restaurant {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
 }
-.register input, .login input {
+.register input, .login input, .add-restaurant input {
   width: 300px;
   height: 40px;
   padding-left: 20px;
   border: 1px solid skyblue;
 }
-.register button, .login button {
+.register button, .login button, .add-restaurant button {
   width: 320px;
   height: 40px;
   border: 1px solid skyblue;

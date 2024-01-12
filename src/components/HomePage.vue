@@ -2,7 +2,7 @@
     <div>
         <HeaderPage></HeaderPage>
         <h1>Hello {{ userName }}</h1>
-        <table v-if="restaurants.length !== 0">
+        <table v-if="restaurants.length !== 0" border="1">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -58,4 +58,12 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+    table {
+        margin: 0 auto;
+    }
+    td{
+        width: 160px;
+        height: 40px;
+    }
+</style>
