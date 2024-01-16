@@ -8,12 +8,17 @@
                 <th>Nome</th>
                 <th>Contato</th>
                 <th>Endereço</th>
+                <th>Actions</th>
             </tr>
             <tr v-for="restaurant in restaurants" :key="restaurant.id">
                 <td>{{ restaurant.id }}</td>
                 <td>{{ restaurant.name }}</td>
                 <td>{{ restaurant.contact }}</td>
                 <td>{{ restaurant.address }}</td>
+                <td>
+                    <RouterLink :to="'/update/' + restaurant.id">Update</RouterLink>
+                    <button @click="deleteRestaurant(restaurant.id)">Delete</button>
+                </td>
             </tr>
         </table>
 
@@ -40,6 +45,17 @@ export default {
         async fetchRestaurants() {
             const result = await axios.get('http://localhost:3000/restaurants')
             this.restaurants = result.data
+        },
+        async deleteRestaurant(id) {
+            let confirmation = confirm("Deseja realmente excluir os dados?")
+            if(confirmation) {
+                const result = await axios.delete('http://localhost:3000/restaurants/' + id)
+                console.warn(result)
+                window.location.reload()
+            } else {
+                alert("Dados não atualizados!")
+            }
+            
         }
     },
 
